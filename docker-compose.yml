@@ -1,4 +1,4 @@
-version: "3"
+version: "3.8"
 
 # More info at https://github.com/pi-hole/docker-pi-hole/ and https://docs.pi-hole.net/
 services:
@@ -17,8 +17,8 @@ services:
       TZ: 'America/Chicago'
     # Volumes store your data between container upgrades
     volumes:
-      - 'pihole_etc:/etc/pihole'
-      - 'dnsmasq_etc:/etc/dnsmasq.d'
+      - /mnt/md0/volumes/pihole/etc/pihole:/etc/pihole
+      - /mnt/md0/volumes/pihole/etc/dnsmasq.d:/dnsmasq.d
     #   https://github.com/pi-hole/docker-pi-hole#note-on-capabilities
     # cap_add:
     #   - NET_ADMIN # Required if you are using Pi-hole as your DHCP server, else not needed
